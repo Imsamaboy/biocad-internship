@@ -1,0 +1,78 @@
+// System.out.println(jsonReader.toString());
+//            JSONObject jsonObject = (JSONObject) parser.parse(reader);
+//            System.out.println(jsonObject);
+//            //System.out.println(jsonObject.containsKey("Conway")); -> OK
+//            System.out.println(jsonObject.get());
+//            JSONArray msg = (JSONArray) jsonObject.get("Fibonacci5");
+//            System.out.println(msg);
+//            Iterator<Integer> iterator = msg.iterator();
+//            while (iterator.hasNext()) {
+//                System.out.println(iterator.next());
+//            }
+
+//
+//    public static void main(String[] args) throws FileNotFoundException, JsonException {
+//        Reader reader = new FileReader("E:\\Java\\biocad_intership\\src\\main\\java\\test.json");
+//        JsonObject deserialize = (JsonObject) Jsoner.deserialize(reader);
+//
+//        // need dozer to copy object to staff, json_simple no api for this?
+//        Mapper mapper = new DozerBeanMapper();
+//
+//        // JSON to object
+//        Staff staff = mapper.map(deserialize);
+//
+//        System.out.println(staff);
+//    }
+
+//        System.out.println(jsonReader.peek());
+//        switch (jsonReader.peek()){
+//            case BEGIN_OBJECT:
+//                jsonReader.beginObject();
+//
+//                jsonReader.endObject();
+//
+//            case NAME:
+//                System.out.println(jsonReader.nextName());
+//                break;
+//            case BEGIN_ARRAY:
+//                List<Integer> ints = new ArrayList<Integer>();
+//                jsonReader.beginArray();
+//                while (jsonReader.hasNext()) {
+//                    ints.add(jsonReader.nextInt());
+//                }
+//                jsonReader.endArray();
+//                System.out.println(ints);
+//                break;
+//            case STRING:
+//                System.out.println(jsonReader.nextString());
+//                break;
+//        }
+
+
+
+
+//    public static Map<String, List<String>> getAllItems(String path) throws IOException {
+//        Map<String, List<String>> allItems = new LinkedHashMap<String, List<String>>();
+//
+//        Reader reader = new FileReader(path);
+//        JsonReader jsonReader = new JsonReader(reader);
+//
+//        jsonReader.beginObject();
+//        while (jsonReader.hasNext()) {
+//            String name = jsonReader.nextName();
+//            //System.out.println(name);
+//
+//            List<String> ints = new ArrayList<String>();
+//            jsonReader.beginArray();
+//            while (jsonReader.hasNext()) {
+//                ints.add(jsonReader.nextString());
+//            }
+//            jsonReader.endArray();
+//
+//            allItems.put(name, ints);
+//            //System.out.println(ints);
+//        }
+//        jsonReader.endObject();
+//
+//        return allItems;
+//    }
